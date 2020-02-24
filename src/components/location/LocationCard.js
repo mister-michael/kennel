@@ -14,6 +14,7 @@ const LocationCard = (props) => {
         </h3>
         <p>Address: {props.location.address}</p>
       </div>
+      <button type="button" onClick={() => props.deleteLocation(props.location.id)}>Close Location</button>
     </div>
   );
 };
