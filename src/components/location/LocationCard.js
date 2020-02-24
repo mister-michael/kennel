@@ -1,5 +1,6 @@
 import React from "react";
 import { tsPropertySignature } from "@babel/types";
+import "./Location.css"
 
 const LocationCard = (props) => {
   return (

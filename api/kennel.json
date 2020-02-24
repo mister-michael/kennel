@@ -1,13 +1,13 @@
 {
   "animals": [
-      { "id": 1, "name": "Doodles", "breed": "Poodle"},
-      { "id": 2, "name": "Decker", "breed": "German Shepherd" },
-      { "id": 3, "name": "Esme", "breed": "Pitbull" }
+      { "id": 1, "name": "Doodles", "breed": "Poodle", "ownerId": 1},
+      { "id": 2, "name": "Decker", "breed": "German Shepherd", "ownerId": 2},
+      { "id": 3, "name": "Esme", "breed": "Pitbull", "ownerId": 3}
   ],
   "employees": [
     {"id": 1, "name": "Andy", "cohort": 38, "department": "Math"},
     {"id": 2, "name": "Kristen", "cohort": 38, "department": "English"},
-    {"id": 3, "name": "Bryan", "cohort": 38, , "department": "Science"}
+    {"id": 3, "name": "Bryan", "cohort": 38, "department": "Science"}
   ],
   "locations": [
     {"id": 1, "location": "Nashville Software School", "address": "123 Street"},
@@ -15,8 +15,8 @@
     {"id": 3, "location": "The Basement of The Alamo", "address": "789 Street"}
   ],
   "owners": [
-    {"id": 1, "name": "Keith", "phone": "555-555-5555"},
-    {"id": 2, "name": "Landon", "phone": "444-555-5555"},
-    {"id": 3, "name": "Kurt", "phone": "333-555-5555"}
+    {"id": 1, "name": "Keith", "phone": "555-555-5555", "animalId": 1},
+    {"id": 2, "name": "Landon", "phone": "444-555-5555", "animalId": 2},
+    {"id": 3, "name": "Kurt", "phone": "333-555-5555", "animalId": 3}
   ]
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { tsPropertySignature } from "@babel/types";
+import "./Animal.css"
 
 const AnimalCard = (props) => {
   return (
