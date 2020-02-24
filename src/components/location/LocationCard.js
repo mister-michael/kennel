@@ -1,6 +1,7 @@
 import React from "react";
+import { tsPropertySignature } from "@babel/types";
 
-const LocationCard = () => {
+const LocationCard = (props) => {
   return (
     <div className="card">
       <div className="card-content">
@@ -8,9 +9,9 @@ const LocationCard = () => {
           {/* <img src={require("./dog.svg")} alt="Location" /> */}
         </picture>
         <h3>
-          Location: <span className="card-locationname">location name</span>
+          Location: <span className="card-locationname">{props.location.location}</span>
         </h3>
-        <p>Address</p>
+        <p>Address: {props.location.address}</p>
       </div>
     </div>
   );

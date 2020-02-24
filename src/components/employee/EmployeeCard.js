@@ -1,6 +1,7 @@
 import React from "react";
+import { tsPropertySignature } from "@babel/types";
 
-const EmployeeCard = () => {
+const EmployeeCard = (props) => {
   return (
     <div className="card">
       <div className="card-content">
@@ -8,9 +9,9 @@ const EmployeeCard = () => {
           {/* <img src={require("./dog.svg")} alt="Employee" /> */}
         </picture>
         <h3>
-          Name: <span className="card-locationname">Employee Name</span>
+          Name: <span className="card-locationname">{props.employee.name}</span>
         </h3>
-        <p>Department</p>
+        <p>Department: {props.employee.department}</p>
       </div>
     </div>
   );

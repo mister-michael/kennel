@@ -5,14 +5,14 @@
       { "id": 3, "name": "Esme", "breed": "Pitbull" }
   ],
   "employees": [
-    {"id": 1, "name": "Andy", "cohort": 38},
-    {"id": 2, "name": "Kristen", "cohort": 38},
-    {"id": 3, "name": "Bryan", "cohort": 38}
+    {"id": 1, "name": "Andy", "cohort": 38, "department": "Math"},
+    {"id": 2, "name": "Kristen", "cohort": 38, "department": "English"},
+    {"id": 3, "name": "Bryan", "cohort": 38, , "department": "Science"}
   ],
   "locations": [
-    {"id": 1, "location": "Nashville Software School"},
-    {"id": 2, "location": "Nashville Software School"},
-    {"id": 3, "location": "nashville Software School"}
+    {"id": 1, "location": "Nashville Software School", "address": "123 Street"},
+    {"id": 2, "location": "St. Louis", "address": "456 Road"},
+    {"id": 3, "location": "The Basement of The Alamo", "address": "789 Street"}
   ],
   "owners": [
     {"id": 1, "name": "Keith", "phone": "555-555-5555"},
