@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { tsPropertySignature } from "@babel/types";
 import "./Animal.css";
 
 const AnimalCard = props => {
@@ -22,7 +21,7 @@ const AnimalCard = props => {
       <button type="button" onClick={() => props.deleteAnimal(props.animal.id)}>
         Discharge
       </button>
-      <div><Link to={`http://localhost:3000//animals/${props.animal.id}`}>
+      <div><Link to={`/animals/${props.animal.id}`}>
         <button>Details</button>
       </Link></div>
     </div>

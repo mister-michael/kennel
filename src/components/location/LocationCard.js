@@ -1,5 +1,5 @@
 import React from "react";
-import { tsPropertySignature } from "@babel/types";
+import { Link } from "react-router-dom";
 import "./Location.css"
 
 const LocationCard = (props) => {
@@ -15,6 +15,9 @@ const LocationCard = (props) => {
         <p>Address: {props.location.address}</p>
       </div>
       <button type="button" onClick={() => props.deleteLocation(props.location.id)}>Close Location</button>
+      <Link to={`/locations/${props.location.id}`}>
+        <button>Details</button>
+      </Link>
     </div>
   );
 };

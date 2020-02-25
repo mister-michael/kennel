@@ -1,5 +1,5 @@
 import React from "react";
-import { tsPropertySignature } from "@babel/types";
+import { Link } from "react-router-dom";
 import "./Employee.css"
 
 const EmployeeCard = (props) => {
@@ -15,6 +15,9 @@ const EmployeeCard = (props) => {
         <p>Department: {props.employee.department}</p>
       </div>
       <button type="button" onClick={() => props.deleteEmployee(props.employee.id)}>You're Fired!</button>
+      <Link to={`/employees/${props.employee.id}`}>
+        <button>Details</button>
+      </Link>
     </div>
   );
 };

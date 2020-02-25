@@ -23,19 +23,19 @@
     {
       "id": 1,
       "name": "Andy",
-      "cohort": 38,
+      "cohort": "38",
       "department": "Math"
     },
     {
       "id": 2,
       "name": "Kristen",
-      "cohort": 38,
-      "department": "English"
+      "cohort": "38",
+      "department": "Engineering"
     },
     {
       "id": 3,
       "name": "Bryan",
-      "cohort": 38,
+      "cohort": "38",
       "department": "Science"
     }
   ],

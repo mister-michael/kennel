@@ -1,17 +1,14 @@
 import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
-// import LocationCard from "./location/LocationCard";
-// import EmployeeCard from "./employee/EmployeeCard";
-// import OwnerCard from "./owner/OwnerCard;"
-//ABOVE were these dynamicaly created, i don't recall making them
-
-//only include these once they are built - previous practice exercise
 import LocationList from "./location/LocationList";
 import EmployeeList from "./employee/EmployeeList";
 import OwnerList from "./owner/OwnerList";
 import AnimalList from "./animal/AnimalList";
 import AnimalDetail from "./animal/AnimalDetail";
+import EmployeeDetail from "./employee/EmployeeDetail";
+import OwnerDetail from "./owner/OwnerDetail";
+import LocationDetail from "./location/LocationDetail";
 
 const ApplicationViews = () => {
   return (
@@ -29,15 +26,7 @@ const ApplicationViews = () => {
           return <AnimalList />;
         }}
       />
-      <Route
-        path="/animals/:animalId(\d+)"
-        render={props => {
-          // Pass the animalId to the AnimalDetailComponent
-          return (
-            <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
-          );
-        }}
-      />
+     
       <Route
         path="/locations"
         render={props => {
@@ -56,26 +45,39 @@ const ApplicationViews = () => {
           return <OwnerList />;
         }}
       />
-      {/* Make sure you add the `exact` attribute here */}
-
       <Route
         path="/animals/:animalId(\d+)"
         render={props => {
-          // Pass the animalId to the AnimalDetailComponent
           return (
             <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
           );
         }}
       />
+      <Route
+        path="/employees/:employeeId(\d+)"
+        render={props => {
+          return (
+            <EmployeeDetail employeeId={parseInt(props.match.params.employeeId)} />
+          );
+        }}
+      />
+      <Route
+        path="/owners/:ownerId(\d+)"
+        render={props => {
+          return (
+            <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} />
+          );
+        }}
+      />
+      <Route
+        path="/locations/:locationId(\d+)"
+        render={props => {
+          return (
+            <LocationDetail locationId={parseInt(props.match.params.locationId)} />
+          );
+        }}
+      />
 
-      {/*
-  This is a new route to handle a URL with the following pattern:
-  http://localhost:3000/animals/1
-
-  It will not handle the following URL because the `(\d+)`
-  matches only numbers after the final slash in the URL
-  http://localhost:3000/animals/jack
-*/}
     </React.Fragment>
   );
 };

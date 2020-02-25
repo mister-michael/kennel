@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Owner.css"
 
 const OwnerCard = (props) => {
@@ -14,6 +15,9 @@ const OwnerCard = (props) => {
         <p>Phone: {props.owner.phone}</p>
       </div>
       <button type="button" onClick={() => props.deleteOwner(props.owner.id)}>Discharge</button>
+      <Link to={`/owners/${props.owner.id}`}>
+        <button>Details</button>
+      </Link>
     </div>
   );
 };
