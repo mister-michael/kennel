@@ -19,7 +19,6 @@ const AnimalDetail = props => {
     AnimalManager.get(props.animalId)
       .then(animal => {
         setAnimal({
-          id: animal.id,
           name: animal.name,
           breed: animal.breed,
           image: animal.image
@@ -36,7 +35,7 @@ const AnimalDetail = props => {
         </picture>
         <h3>Name: <span style={{ color: 'darkslategrey' }}>{animal.name}</span></h3>
         <p>Breed: {animal.breed}</p>
-        <button type="button" disabled={isLoading} onClick={() => handleDelete(animal.id)}>
+        <button type="button" disabled={isLoading} onClick={() => handleDelete(props.animalId)}>
         Discharge
       </button>
       </div>

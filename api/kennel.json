@@ -44,6 +44,11 @@
       "id": 1,
       "location": "Nashville Software School",
       "address": "123 Street"
+    },
+    {
+      "id": 3,
+      "location": "The Basement of The Alamo",
+      "address": "789 Street"
     }
   ],
   "owners": [
