@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
-import OwnerManager from '../../modules/OwnerManager';
-import './OwnerForm.css'
+import EmployeeManager from '../../modules/EmployeeManager';
+import './EmployeeForm.css'
 
-const OwnerForm = props => {
-  const [owner, setOwner] = useState({ name: "", phone: "", image: ""});
+const EmployeeForm = props => {
+  const [employee, setEmployee] = useState({ name: "", cohort: "", department: ""});
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = evt => {
-    const stateToChange = { ...owner };
+    const stateToChange = { ...employee };
     stateToChange[evt.target.id] = evt.target.value;
-    setOwner(stateToChange);
+    setEmployee(stateToChange);
   };
 
-  const constructNewOwner = evt => {
+  const constructNewEmployee = evt => {
     evt.preventDefault();
-    if (owner.name === "" || owner.phone === "") {
-      window.alert("Please input an owner name and phone");
+    if (employee.name === "" || employee.cohort === "" || employee.department === "") {
+      window.alert("Please input employee information");
     } else {
       setIsLoading(true);
-      OwnerManager.post(owner)
-        .then(() => props.history.push("/owners"));
+      EmployeeManager.post(employee)
+        .then(() => props.history.push("/employees"));
     }
   };
 
@@ -33,31 +33,31 @@ const OwnerForm = props => {
               required
               onChange={handleFieldChange}
               id="name"
-              placeholder="Owner name"
+              placeholder="Employee name"
             />
             <label htmlFor="name">Name</label>
             <input
               type="text"
               required
               onChange={handleFieldChange}
-              id="phone"
-              placeholder="Phone"
+              id="cohort"
+              placeholder="Cohort"
             />
-            <label htmlFor="phone">Phone</label>
+            <label htmlFor="cohort">Cohort #</label>
             <input
               type="text"
               required
               onChange={handleFieldChange}
-              id="image"
-              placeholder="Image"
+              id="department"
+              placeholder="Department"
             />
-            <label htmlFor="image">Image Url</label>
+            <label htmlFor="department">Department</label>
           </div>
           <div className="alignRight">
             <button
               type="button"
               disabled={isLoading}
-              onClick={constructNewOwner}
+              onClick={constructNewEmployee}
             >Submit</button>
           </div>
         </fieldset>
@@ -66,4 +66,4 @@ const OwnerForm = props => {
   );
 };
 
-export default OwnerForm
+export default EmployeeForm

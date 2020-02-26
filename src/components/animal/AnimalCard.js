@@ -12,11 +12,6 @@ const AnimalCard = props => {
         <picture>
           <img src={`${props.animal.image}`} alt="My Dog" />
         </picture>
-        {/* <h3>
-          Name:
-          <span className="card-petname">{props.animal.name}</span>
-        </h3>
-        <p>Breed: {props.animal.breed}</p> */}
       </div>
       <button type="button" onClick={() => props.deleteAnimal(props.animal.id)}>
         Discharge

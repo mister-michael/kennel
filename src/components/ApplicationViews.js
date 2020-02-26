@@ -10,8 +10,9 @@ import EmployeeDetail from "./employee/EmployeeDetail";
 import OwnerDetail from "./owner/OwnerDetail";
 import LocationDetail from "./location/LocationDetail";
 import AnimalForm from "./animal/AnimalForm";
-import LocationForm from './location/LocationForm';
+import LocationForm from "./location/LocationForm";
 import OwnerForm from "./owner/OwnerForm";
+import EmployeeForm from "./employee/EmployeeForm";
 
 const ApplicationViews = () => {
   return (
@@ -52,7 +53,7 @@ const ApplicationViews = () => {
         exact
         path="/locations"
         render={props => {
-          return <LocationList {...props}/>;
+          return <LocationList {...props} />;
         }}
       />
       <Route
@@ -72,19 +73,23 @@ const ApplicationViews = () => {
           return <LocationForm {...props} />;
         }}
       />
-      
+
       <Route
         exact
         path="/owners"
         render={props => {
-          return <OwnerList {...props}/>;
+          return <OwnerList {...props} />;
         }}
       />
       <Route
         path="/owners/:ownerId(\d+)"
         render={props => {
-          return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} 
-          {...props}/>;
+          return (
+            <OwnerDetail
+              ownerId={parseInt(props.match.params.ownerId)}
+              {...props}
+            />
+          );
         }}
       />
       <Route
@@ -97,7 +102,7 @@ const ApplicationViews = () => {
         exact
         path="/employees"
         render={props => {
-          return <EmployeeList />;
+          return <EmployeeList {...props} />;
         }}
       />
       <Route
@@ -111,8 +116,12 @@ const ApplicationViews = () => {
           );
         }}
       />
-      
-      
+      <Route
+        path="/employees/new"
+        render={props => {
+          return <EmployeeForm {...props} />;
+        }}
+      />
     </React.Fragment>
   );
 };

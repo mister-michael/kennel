@@ -12,15 +12,12 @@ const AnimalForm = props => {
     setAnimal(stateToChange);
   };
 
-  /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full animal list
-  */
   const constructNewAnimal = evt => {
     evt.preventDefault();
     if (animal.Name === "" || animal.breed === "") {
       window.alert("Please input an animal name and breed");
     } else {
       setIsLoading(true);
-      // Create the animal and redirect user to animal list
       AnimalManager.post(animal)
         .then(() => props.history.push("/animals"));
     }

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import EmployeeManager from "../../modules/EmployeeManager";
 import EmployeeCard from "./EmployeeCard";
 
-const EmployeeList = () => {
+const EmployeeList = (props) => {
   const [employees, setEmployee] = useState([]);
 
   const getEmployees = () => {
@@ -13,8 +13,9 @@ const EmployeeList = () => {
   };
 
   const deleteEmployee = id => {
-    EmployeeManager.delete(id)
-      .then(() => EmployeeManager.getAll().then(setEmployee));
+    EmployeeManager.delete(id).then(() =>
+      EmployeeManager.getAll().then(setEmployee)
+    );
   };
 
   useEffect(() => {
@@ -23,6 +24,17 @@ const EmployeeList = () => {
 
   return (
     <div className="container-cards">
+      <section className="section-content">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => {
+            props.history.push("/employees/new");
+          }}
+        >
+          New Employee
+        </button>
+      </section>
       {employees.map(employee => (
         <EmployeeCard
           key={employee.id}
