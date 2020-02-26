@@ -11,6 +11,7 @@ import OwnerDetail from "./owner/OwnerDetail";
 import LocationDetail from "./location/LocationDetail";
 import AnimalForm from "./animal/AnimalForm";
 import LocationForm from './location/LocationForm';
+import OwnerForm from "./owner/OwnerForm";
 
 const ApplicationViews = () => {
   return (
@@ -71,18 +72,32 @@ const ApplicationViews = () => {
           return <LocationForm {...props} />;
         }}
       />
+      
+      <Route
+        exact
+        path="/owners"
+        render={props => {
+          return <OwnerList {...props}/>;
+        }}
+      />
+      <Route
+        path="/owners/:ownerId(\d+)"
+        render={props => {
+          return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} 
+          {...props}/>;
+        }}
+      />
+      <Route
+        path="/owners/new"
+        render={props => {
+          return <OwnerForm {...props} />;
+        }}
+      />
       <Route
         exact
         path="/employees"
         render={props => {
           return <EmployeeList />;
-        }}
-      />
-      <Route
-        exact
-        path="/owners"
-        render={props => {
-          return <OwnerList />;
         }}
       />
       <Route
@@ -96,12 +111,7 @@ const ApplicationViews = () => {
           );
         }}
       />
-      <Route
-        path="/owners/:ownerId(\d+)"
-        render={props => {
-          return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} />;
-        }}
-      />
+      
       
     </React.Fragment>
   );
