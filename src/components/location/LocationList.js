@@ -17,7 +17,8 @@ const LocationList = () => {
 
   const deleteLocation = id => {
     LocationManager.delete(id)
-      .then(() => LocationManager.getAll().then(setLocation));
+      .then(() => LocationManager.getAll().then(setLocation))
+      
   };
 
   // got the animals from the API on the component's first render
