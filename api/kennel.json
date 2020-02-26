@@ -1,0 +1,72 @@
+{
+  "animals": [
+    {
+      "id": 3,
+      "name": "esme",
+      "breed": "Pitbull",
+      "image": "https://cdn.shopify.com/s/files/1/2380/9241/products/FUNNY_DOG_MASK_2000x.jpg?v=1536754516"
+    },
+    {
+      "id": 2,
+      "name": "donna",
+      "breed": "Collie",
+      "image": "https://i.ytimg.com/vi/YEU_FIly708/maxresdefault.jpg"
+    },
+    {
+      "id": 1,
+      "name": "pork Pie",
+      "breed": "Doodledor",
+      "image": "https://media.apnarm.net.au/media/images/2019/07/31/b882070177z1_20190731162602_000got1kebfc3-0-236ta6pqi7v09oscqs2.jpg"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Andy",
+      "cohort": "38",
+      "department": "Math"
+    },
+    {
+      "id": 2,
+      "name": "Kristen",
+      "cohort": "38",
+      "department": "Engineering"
+    },
+    {
+      "id": 3,
+      "name": "Bryan",
+      "cohort": "38",
+      "department": "Science"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "location": "Nashville Software School",
+      "address": "123 Street"
+    },
+    {
+      "id": 3,
+      "location": "The Basement of The Alamo",
+      "address": "789 Street"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Keith",
+      "phone": "555-555-5555"
+    },
+    {
+      "id": 3,
+      "name": "Kurt",
+      "phone": "333-555-5555"
+    },
+    {
+      "name": "test",
+      "phone": "test",
+      "image": "test",
+      "id": 4
+    }
+  ]
+}
