@@ -2,19 +2,19 @@
   "animals": [
     {
       "id": 3,
-      "name": "Esme",
+      "name": "esme",
       "breed": "Pitbull",
       "image": "https://cdn.shopify.com/s/files/1/2380/9241/products/FUNNY_DOG_MASK_2000x.jpg?v=1536754516"
     },
     {
       "id": 2,
-      "name": "Donna",
+      "name": "donna",
       "breed": "Collie",
       "image": "https://i.ytimg.com/vi/YEU_FIly708/maxresdefault.jpg"
     },
     {
       "id": 1,
-      "name": "Pork Pie",
+      "name": "pork Pie",
       "breed": "Doodledor",
       "image": "https://media.apnarm.net.au/media/images/2019/07/31/b882070177z1_20190731162602_000got1kebfc3-0-236ta6pqi7v09oscqs2.jpg"
     }

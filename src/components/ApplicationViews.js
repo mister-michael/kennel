@@ -9,6 +9,8 @@ import AnimalDetail from "./animal/AnimalDetail";
 import EmployeeDetail from "./employee/EmployeeDetail";
 import OwnerDetail from "./owner/OwnerDetail";
 import LocationDetail from "./location/LocationDetail";
+import AnimalForm from "./animal/AnimalForm";
+import LocationForm from './location/LocationForm';
 
 const ApplicationViews = () => {
   return (
@@ -24,7 +26,7 @@ const ApplicationViews = () => {
         exact
         path="/animals"
         render={props => {
-          return <AnimalList />;
+          return <AnimalList {...props} />;
         }}
       />
       <Route
@@ -39,10 +41,34 @@ const ApplicationViews = () => {
         }}
       />
       <Route
+        path="/animals/new"
+        render={props => {
+          return <AnimalForm {...props} />;
+        }}
+      />
+
+      <Route
         exact
         path="/locations"
         render={props => {
-          return <LocationList />;
+          return <LocationList {...props}/>;
+        }}
+      />
+      <Route
+        path="/locations/:locationId(\d+)"
+        render={props => {
+          return (
+            <LocationDetail
+              locationId={parseInt(props.match.params.locationId)}
+              {...props}
+            />
+          );
+        }}
+      />
+      <Route
+        path="/locations/new"
+        render={props => {
+          return <LocationForm {...props} />;
         }}
       />
       <Route
@@ -59,7 +85,6 @@ const ApplicationViews = () => {
           return <OwnerList />;
         }}
       />
-
       <Route
         path="/employees/:employeeId(\d+)"
         render={props => {
@@ -77,17 +102,7 @@ const ApplicationViews = () => {
           return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} />;
         }}
       />
-      <Route
-        path="/locations/:locationId(\d+)"
-        render={props => {
-          return (
-            <LocationDetail
-              locationId={parseInt(props.match.params.locationId)}
-              {...props}
-            />
-          );
-        }}
-      />
+      
     </React.Fragment>
   );
 };
