@@ -18,6 +18,7 @@ import AnimalEditForm from "./animal/AnimalEditForm";
 import EmployeeEditForm from "./employee/EmployeeEditForm";
 import OwnerEditForm from "./owner/OwnerEditForm";
 import LocationEditForm from "./location/LocationEditForm";
+import EmployeeWithAnimals from "./employee/EmployeeWithAnimal";
 
 const ApplicationViews = () => {
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
@@ -198,6 +199,8 @@ const ApplicationViews = () => {
           }
         }}
       />
+      {/* OWNERS END */}
+      {/* EMPLOYEES START */}
       <Route
         exact
         path="/employees"
@@ -243,6 +246,12 @@ const ApplicationViews = () => {
           } else {
             return <Redirect to="/login" />;
           }
+        }}
+      />
+      <Route
+        path="/employees/:employeeId(\d+)/details"
+        render={props => {
+          return <EmployeeWithAnimals {...props} />;
         }}
       />
     </React.Fragment>
