@@ -20,7 +20,6 @@ import OwnerEditForm from "./owner/OwnerEditForm";
 import LocationEditForm from "./location/LocationEditForm";
 
 const ApplicationViews = () => {
-
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
   return (
@@ -91,6 +90,18 @@ const ApplicationViews = () => {
           }
         }}
       />
+      {/* <Route
+        path="/animals/:animalId(\d+)/edit"
+        render={props => {
+          if (isAuthenticated()) {
+            return <AnimalEditForm {...props} />;
+          } else {
+            return <Redirect to="/login" />;
+          }
+        }}
+      /> */}
+      {/* ANIMALS END */}
+      {/* LOCATION START */}
       <Route
         exact
         path="/locations"
@@ -103,6 +114,7 @@ const ApplicationViews = () => {
         }}
       />
       <Route
+        exact
         path="/locations/:locationId(\d+)"
         render={props => {
           if (isAuthenticated()) {
@@ -128,6 +140,18 @@ const ApplicationViews = () => {
         }}
       />
       <Route
+        path="/locations/:locationId(\d+)/edit"
+        render={props => {
+          if (isAuthenticated()) {
+            return <LocationEditForm {...props} />;
+          } else {
+            return <Redirect to="/login" />;
+          }
+        }}
+      />
+      {/* LOCATIONS END */}
+      {/* OWNERS START*/}
+      <Route
         exact
         path="/owners"
         render={props => {
@@ -139,6 +163,7 @@ const ApplicationViews = () => {
         }}
       />
       <Route
+        exact
         path="/owners/:ownerId(\d+)"
         render={props => {
           if (isAuthenticated()) {
@@ -158,6 +183,16 @@ const ApplicationViews = () => {
         render={props => {
           if (isAuthenticated()) {
             return <OwnerForm {...props} />;
+          } else {
+            return <Redirect to="/login" />;
+          }
+        }}
+      />
+      <Route
+        path="/owners/:ownerId(\d+)/edit"
+        render={props => {
+          if (isAuthenticated()) {
+            return <OwnerEditForm {...props} />;
           } else {
             return <Redirect to="/login" />;
           }
