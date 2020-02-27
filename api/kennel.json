@@ -11,15 +11,15 @@
       "id": 2,
       "name": "donna",
       "breed": "Collie",
-      "employeeId": 2,
-      "image": "https://i.ytimg.com/vi/YEU_FIly708/maxresdefault.jpg"
+      "image": "https://i.ytimg.com/vi/YEU_FIly708/maxresdefault.jpg",
+      "employeeId": "3"
     },
     {
       "id": 1,
       "name": "pork Pie",
       "breed": "Doodledor",
-      "employeeId": 3,
-      "image": "https://media.apnarm.net.au/media/images/2019/07/31/b882070177z1_20190731162602_000got1kebfc3-0-236ta6pqi7v09oscqs2.jpg"
+      "image": "https://media.apnarm.net.au/media/images/2019/07/31/b882070177z1_20190731162602_000got1kebfc3-0-236ta6pqi7v09oscqs2.jpg",
+      "employeeId": "1"
     }
   ],
   "employees": [

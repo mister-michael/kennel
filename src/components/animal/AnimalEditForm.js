@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import AnimalManager from "../../modules/AnimalManager";
 import "./AnimalForm.css";
+import EmployeeManager from "../../modules/EmployeeManager";
 
 const AnimalEditForm = props => {
   const [animal, setAnimal] = useState({
     name: "",
     breed: "",
-    image: ""
+    image: "",
+    employeeId: ""
   });
-  const [employee, setEmployee] = useState({
-    id: ""
-  });
-  const [isLoading, setIsLoading] = useState(false);
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  const [employees, setEmployees] = useState([]);
 
   const handleFieldChange = evt => {
     const stateToChange = { ...animal };
@@ -28,7 +30,8 @@ const AnimalEditForm = props => {
       id: props.match.params.animalId,
       name: animal.name,
       breed: animal.breed,
-      image: animal.image
+      image: animal.image,
+      employeeId: animal.employeeId
     };
 
     AnimalManager.update(editedAnimal).then(() =>
@@ -37,10 +40,15 @@ const AnimalEditForm = props => {
   };
 
   useEffect(() => {
-    AnimalManager.get(props.match.params.animalId).then(animal => {
-      setAnimal(animal);
-      setIsLoading(false);
-    });
+    setTimeout(() => {
+      AnimalManager.get(props.match.params.animalId)
+        .then(animal => setAnimal(animal))
+        .then(() => EmployeeManager.getAll())
+        .then(employee => {
+          setEmployees(employee);
+          setIsLoading(false);
+        });
+    }, 1000);
   }, []);
 
   return (
