@@ -10,7 +10,7 @@ const Kennel = () => {
       <NavBar />
       <ApplicationViews />
     </>
-  );
+  )
 };
 
 export default Kennel;

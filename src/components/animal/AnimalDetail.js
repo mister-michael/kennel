@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import AnimalManager from '../../modules/AnimalManager';
-import './AnimalDetail.css'
-import {firstLetterCase} from '../../modules/helpers'
+import React, { useState, useEffect } from "react";
+import AnimalManager from "../../modules/AnimalManager";
+import "./AnimalDetail.css";
+import { firstLetterCase } from "../../modules/helpers";
 
 const AnimalDetail = props => {
-  const [animal, setAnimal] = useState({ name: "", breed: "", image:"" });
+  const [animal, setAnimal] = useState({ name: "", breed: "", image: "" });
   const [isLoading, setIsLoading] = useState(true);
 
   const handleDelete = () => {
-    //invoke the delete function in AnimalManger and re-direct to the animal list.
     setIsLoading(true);
     AnimalManager.delete(props.animalId).then(() =>
       props.history.push("/animals")
@@ -16,32 +15,45 @@ const AnimalDetail = props => {
   };
 
   useEffect(() => {
-    //get(id) from AnimalManager and hang on to the data; put it into state
-    AnimalManager.get(props.animalId)
-      .then(animal => {
+    AnimalManager.getAll().then(animal => {
+      const foundAnimal = animal.find(element => element.id === props.animalId);
+      if (foundAnimal) {
+        console.log("if statement");
         setAnimal({
-          name: firstLetterCase(animal.name),
-          breed: animal.breed,
-          image: animal.image
+          name: foundAnimal.name,
+          breed: foundAnimal.breed,
+          image: foundAnimal.image
         });
+
         setIsLoading(false);
-      });
+      }
+    });
   }, [props.animalId]);
 
-  return (
-    <div className="card">
-      <div className="card-content">
-        <picture>
-          <img src={`${animal.image}`} />
-        </picture>
-        <h3>Name: <span style={{ color: 'darkslategrey' }}>{animal.name}</span></h3>
-        <p>Breed: {animal.breed}</p>
-        <button type="button" disabled={isLoading} onClick={() => handleDelete(props.animalId)}>
-        Discharge
-      </button>
+  if (animal.id === props.animalId) {
+    return (
+      <div className="card">
+        <div className="card-content">
+          <picture>
+            <img src={`${animal.image}`} />
+          </picture>
+          <h3>
+            Name: <span style={{ color: "darkslategrey" }}>{animal.name}</span>
+          </h3>
+          <p>Breed: {animal.breed}</p>
+          <button
+            type="button"
+            disabled={isLoading}
+            onClick={() => handleDelete(props.animalId)}
+          >
+            Discharge
+          </button>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  } else {
+    return <h2>This Page Does Not Exist... Probably</h2>
+  }
+};
 
 export default AnimalDetail;
