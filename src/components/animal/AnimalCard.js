@@ -4,7 +4,6 @@ import "./Animal.css";
 
 const AnimalCard = props => {
   console.log(props.animal.image);
-  
 
   return (
     <div className="card">
@@ -16,9 +15,17 @@ const AnimalCard = props => {
       <button type="button" onClick={() => props.deleteAnimal(props.animal.id)}>
         Discharge
       </button>
-      <div><Link to={`/animals/${props.animal.id}`}>
-        <button>Details</button>
-      </Link></div>
+      <div>
+        <Link to={`/animals/${props.animal.id}`}>
+          <button>Details</button>
+        </Link>
+      </div>
+      <button
+        type="button"
+        onClick={() => props.history.push(`/animals/${props.animal.id}/edit`)}
+      >
+        Edit
+      </button>
     </div>
   );
 };

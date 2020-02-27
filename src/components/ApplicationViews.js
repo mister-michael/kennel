@@ -14,9 +14,13 @@ import LocationForm from "./location/LocationForm";
 import OwnerForm from "./owner/OwnerForm";
 import EmployeeForm from "./employee/EmployeeForm";
 import Login from "./auth/Login.js";
-import { isatty } from "tty";
+import AnimalEditForm from "./animal/AnimalEditForm";
+import EmployeeEditForm from "./employee/EmployeeEditForm";
+import OwnerEditForm from "./owner/OwnerEditForm";
+import LocationEditForm from "./location/LocationEditForm";
 
 const ApplicationViews = () => {
+
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
   return (
@@ -52,6 +56,7 @@ const ApplicationViews = () => {
         }}
       />
       <Route
+        exact
         path="/animals/:animalId(\d+)"
         render={props => {
           if (isAuthenticated()) {
@@ -71,6 +76,16 @@ const ApplicationViews = () => {
         render={props => {
           if (isAuthenticated()) {
             return <AnimalForm {...props} />;
+          } else {
+            return <Redirect to="/login" />;
+          }
+        }}
+      />
+      <Route
+        path="/animals/:animalId(\d+)/edit"
+        render={props => {
+          if (isAuthenticated()) {
+            return <AnimalEditForm {...props} />;
           } else {
             return <Redirect to="/login" />;
           }
@@ -160,6 +175,7 @@ const ApplicationViews = () => {
         }}
       />
       <Route
+        exact
         path="/employees/:employeeId(\d+)"
         render={props => {
           if (isAuthenticated()) {
@@ -179,6 +195,16 @@ const ApplicationViews = () => {
         render={props => {
           if (isAuthenticated()) {
             return <EmployeeForm {...props} />;
+          } else {
+            return <Redirect to="/login" />;
+          }
+        }}
+      />
+      <Route
+        path="/employees/:employeeId(\d+)/edit"
+        render={props => {
+          if (isAuthenticated()) {
+            return <EmployeeEditForm {...props} />;
           } else {
             return <Redirect to="/login" />;
           }

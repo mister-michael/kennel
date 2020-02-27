@@ -2,7 +2,7 @@
   "animals": [
     {
       "id": 3,
-      "name": "esme",
+      "name": "Jo Jo",
       "breed": "Pitbull",
       "image": "https://cdn.shopify.com/s/files/1/2380/9241/products/FUNNY_DOG_MASK_2000x.jpg?v=1536754516"
     },
@@ -28,7 +28,7 @@
     },
     {
       "id": 2,
-      "name": "Kristen",
+      "name": "Kristen Norris",
       "cohort": "38",
       "department": "Engineering"
     },
