@@ -15,7 +15,7 @@ const LocationDetail = props => {
   };
 
   useEffect(() => {
-    //get(id) from locationManager and hang on to the data; put it into state
+
     LocationManager.get(props.locationId)
       .then(location => {
         setLocation({

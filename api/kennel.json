@@ -2,7 +2,7 @@
   "animals": [
     {
       "id": 3,
-      "name": "esme",
+      "name": "Jo Jo",
       "breed": "Pitbull",
       "image": "https://cdn.shopify.com/s/files/1/2380/9241/products/FUNNY_DOG_MASK_2000x.jpg?v=1536754516"
     },
@@ -28,7 +28,7 @@
     },
     {
       "id": 2,
-      "name": "Kristen",
+      "name": "Kristen Norris",
       "cohort": "38",
       "department": "Engineering"
     },
@@ -43,7 +43,7 @@
     {
       "id": 1,
       "location": "Nashville Software School",
-      "address": "123 Street"
+      "address": "123 Street Street"
     },
     {
       "id": 3,
@@ -60,7 +60,7 @@
     {
       "id": 3,
       "name": "Kurt",
-      "phone": "333-555-5555"
+      "phone": "1"
     },
     {
       "name": "test",

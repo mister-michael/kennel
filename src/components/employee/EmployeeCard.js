@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Employee.css"
+import "./Employee.css";
 
-const EmployeeCard = (props) => {
+const EmployeeCard = props => {
   return (
     <div className="card">
       <div className="card-content">
@@ -14,10 +14,21 @@ const EmployeeCard = (props) => {
         </h3>
         <p>Department: {props.employee.department}</p>
       </div>
-      <button type="button" onClick={() => props.deleteEmployee(props.employee.id)}>You're Fired!</button>
+      <button
+        type="button"
+        onClick={() => props.deleteEmployee(props.employee.id)}
+      >
+        You're Fired!
+      </button>
       <Link to={`/employees/${props.employee.id}`}>
         <button>Details</button>
       </Link>
+      <button
+        type="button"
+        onClick={() => props.history.push(`/employees/${props.employee.id}/edit`)}
+      >
+        Edit
+      </button>
     </div>
   );
 };
