@@ -240,13 +240,13 @@ const ApplicationViews = () => {
       />
       <Route
         path="/employees/:employeeId(\d+)/edit"
-        render={props => {
-          if (isAuthenticated()) {
-            return <EmployeeEditForm {...props} />;
-          } else {
-            return <Redirect to="/login" />;
-          }
-        }}
+        render={props =>
+          isAuthenticated() ? (
+            <EmployeeEditForm {...props} />
+          ) : (
+            <Redirect to="/login" />
+          )
+        }
       />
       <Route
         path="/employees/:employeeId(\d+)/details"
