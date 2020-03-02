@@ -32,7 +32,6 @@ const ApplicationViews = () => {
           return <Login {...props} />;
         }}
       />
-      ;
       <Route
         exact
         path="/"
@@ -91,16 +90,6 @@ const ApplicationViews = () => {
           }
         }}
       />
-      {/* <Route
-        path="/animals/:animalId(\d+)/edit"
-        render={props => {
-          if (isAuthenticated()) {
-            return <AnimalEditForm {...props} />;
-          } else {
-            return <Redirect to="/login" />;
-          }
-        }}
-      /> */}
       {/* ANIMALS END */}
       {/* LOCATION START */}
       <Route
