@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import AnimalManager from "../../modules/AnimalManager";
 import "./AnimalDetail.css";
-import { firstLetterCase } from "../../modules/helpers";
 
 const AnimalDetail = props => {
-  const [animal, setAnimal] = useState({ name: "", breed: "", image: "" });
+  const [animal, setAnimal] = useState({ name: "", breed: "", image: ""});
   const [isLoading, setIsLoading] = useState(true);
 
   const handleDelete = () => {
@@ -16,13 +15,15 @@ const AnimalDetail = props => {
 
   useEffect(() => {
     AnimalManager.getAll().then(animal => {
+      console.log(animal)
       const foundAnimal = animal.find(element => element.id === props.animalId);
       if (foundAnimal) {
         console.log("if statement");
         setAnimal({
           name: foundAnimal.name,
           breed: foundAnimal.breed,
-          image: foundAnimal.image
+          image: foundAnimal.image,
+          id: foundAnimal.id
         });
 
         setIsLoading(false);
@@ -52,6 +53,7 @@ const AnimalDetail = props => {
       </div>
     );
   } else {
+    console.log(animal, animal.id, props.animalId)
     return <h2>This Page Does Not Exist... Probably</h2>
   }
 };
